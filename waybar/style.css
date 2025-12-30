@@ -1,0 +1,296 @@
+/* Configuration for Evan Liu's waybar on arch */
+
+/* Base styling */
+
+@define-color text-color #e1c9f7;
+
+waybar * {
+  border: 4px;
+  border-radius: 4px;
+  min-height: 0;
+  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+#waybar {
+  background-color: #181818;
+  border-radius: 1px;
+  opacity: 0.95
+}
+
+window#waybar {
+  background: #181818;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: .5s;
+  background-color: rgba(24, 24, 24, 0.1);
+}
+
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+/* Workspaces */
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+  background-color: #64727D;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #64727D;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+/* Default styling */
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#bluetooth,
+#custom-wifi,
+#pulseaudio,
+#custom-microphone,
+#custom-power,
+#custom-workspace-1,
+#custom-workspace-2,
+#custom-workspace-3,
+#custom-workspace-4,
+#custom-workspace-5,
+#tray {
+  padding: 2px 8px;
+  margin: 0px 0px;
+  border: 1px solid @text-color;
+  border-radius: 1px;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+/* Module stylings */
+
+#custom-workspace-1 {
+  font-weight: bold;
+  font-size: 18px;
+  color: @text-color;
+}
+
+#custom-workspace-2 {
+  font-weight: bold;
+  font-size: 18px;
+  color: @text-color;
+}
+
+#custom-workspace-3 {
+  font-weight: bold;
+  font-size: 18px;
+  color: @text-color;
+}
+
+#custom-workspace-4 {
+  font-weight: bold;
+  font-size: 18px;
+  color: @text-color;
+}
+
+#custom-workspace-5 {
+  font-weight: bold;
+  font-size: 18px;
+  color: @text-color;
+}
+
+#clock {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#battery {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color; 
+}
+
+#battery.charging, #battery.plugged {
+  color: #ffffff;
+  background-color: #26A65B;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+  padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+  background-color: #f53c3c;
+  color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+  background-color: #2980b9;
+  color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @text-color;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#cpu {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#memory {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color; 
+}
+
+#bluetooth {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#custom-wifi {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#custom-wifi.disconnected {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#custom-microphone {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#pulseaudio {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#custom-power {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#temperature {
+  font-weight: bold;
+  font-size: 12px;
+  color: @text-color;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#tray {
+  background-color: #2980b9;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+/* Hover effects */
+
+#custom-microphone:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#custom-bluetooth:hover,
+#custom-power:hover,
+#clock:hover,
+#custom-wifi:hover,
+#custom-workspace-1:hover,
+#custom-workspace-2:hover,
+#custom-workspace-3:hover,
+#custom-workspace-4:hover,
+#custom-workspace-5:hover,
+#tray:hover {
+  background-color: #4c566a;
+  border: 1px solid #ff5ccc;
+  color: #ff5ccc;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Tooltip effects */
+
+#tooltip {
+  color: @text-color;
+  background-color: #3b4252;
+  font-weight: bold;
+}
+
+tooltip label {
+  color: @text-color;
+}
