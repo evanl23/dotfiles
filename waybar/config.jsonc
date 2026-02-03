@@ -70,7 +70,12 @@
   "clock": {
     "tooltip-format": "{calendar}",
     "format-alt": "[   {:%a, %d %b %Y}   ]",
-    "format": "[    {:%H:%M }   ]"
+    "format": "[    {:%H:%M }   ]",
+    "calendar": {
+      "format": {
+	"today": "<span color='#fa5ccc'><b>{}</b></span>"
+      }
+    }
   }, 
     
   "cpu": {
