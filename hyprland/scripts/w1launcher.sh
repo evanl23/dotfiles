@@ -22,6 +22,8 @@ launch_if_not_running "cava" "Cava" "cava"
 
 #sleep 0.05
 
+launch_if_not_running "cmatrix" "Cmatrix" "'cmatrix -b -C white'"
+
 # if ! pgrep -x spotify > /dev/null; then 
 # 	hyprctl dispatch exec "alacritty --title "spotify-launcher" --hold -e bash -c "/usr/bin/spotify-launcher" &" 
 # sleep 0.35
