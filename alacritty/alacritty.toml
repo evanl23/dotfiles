@@ -1,0 +1,16 @@
+
+# set default shell
+terminal.shell = {program = "/usr/bin/zsh" }
+
+[window]
+padding = { x = 3, y = 3 }
+# dynamic_padding = true
+
+[cursor]
+style = { shape="Block", blinking="Always" }
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+
