@@ -31,5 +31,3 @@ launch_if_not_running "cmatrix" "Cmatrix" "'cmatrix -b -C white'"
 # fi
 
 launch_if_not_running "spotify_player" "Spotify" "/usr/bin/spotify_player"
-
-hyprctl dispatch focuswindow title:"Spotify"
